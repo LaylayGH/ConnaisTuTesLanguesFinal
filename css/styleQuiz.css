@@ -1,0 +1,313 @@
+/************************************************************
+ ************************ ANIMATIONS ************************
+ ************************************************************/
+:root {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}
+@keyframes animer-resultat {
+  0% {
+    transform: translateX(-100vh);
+  }
+  100% {
+    transform: translateX(0vh);
+  }
+}
+@keyframes bonne-reponse-anim {
+  0% {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    -ms-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    -ms-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    -ms-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+  100% {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes mauvaise-reponse-anim {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flotter {
+  0% {
+    transform: translatey(0vh);
+  }
+  55% {
+    transform: translatey(-2vh);
+  }
+  100% {
+    transform: translatey(0vh);
+  }
+}
+@keyframes bulle-intro-anim {
+  0% {
+    transform: scale(0);
+    transform-origin: 0% 50%;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bulle-intro-anim-hover {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+/*Contenant de l'intro*/
+.bulle-intro-anim {
+  display: flex;
+  position: relative;
+  color: #c6c7ca;
+  background-color: white;
+  text-align: center;
+  height: 63vh;
+  width: 91vh;
+  font-size: 5rem;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 36px 26px 50px #c6c7ca;
+  /*Pour l'animation de début*/
+  animation: bulle-intro-anim 5s;
+}
+/*Titre de l'intro*/
+.bulle-intro-anim h1 {
+  font-family: "Sniglet", cursive;
+  font-size: 5rem;
+  margin: 0.67em 2rem;
+}
+.bulle-intro-anim::after {
+  content: "";
+  top: 51vh;
+  left: 3vh;
+  position: absolute;
+  border-right: 170px solid #ffffff;
+  border-left: 0px solid transparent;
+  border-top: 65px solid transparent;
+}
+
+/*Élément du curseur*/
+.curseur {
+  left: calc(var(--mouse-x) - 10rem);
+  /*Changer le curseur*/
+  cursor: url(../images/curseurPerso.png) 32 32, pointer;
+}
+
+/************************************************************
+ ***************** QUESTIONS DU QUIZ ************************
+ ************************************************************/
+.main-quiz {
+  /*Pour mettre le nouveau background image*/
+  background-image: url(../images/Image-Femmes.jfif);
+  /*Conteneur flex en colonne*/
+  flex-direction: column;
+  /*N'est pas affiché au démarrage*/
+  opacity: 0;
+}
+
+.main-quiz > header {
+  font-size: 4rem;
+  padding-bottom: 3rem;
+
+  /*Position afin de pouvoir animer la barre*/
+  position: relative;
+}
+
+section .titre-question {
+  background-color: #ffffffbd;
+  font-size: 1.5rem;
+  width: 100%;
+  height: 15vh;
+  margin: 0;
+  /*margin-top: 3rem;*/
+  color: #7f2f28;
+  /*Emplacement avec flex*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section .les-choix-de-reponse {
+  width: 90vw;
+  flex: 1 1 auto;
+  /*Emplacement avec flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*Contenant des choix*/
+div.choix {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 30vmin;
+  height: auto;
+  color: #7f2f28;
+  position: relative;
+  background-color: white;
+  box-shadow: 26px 5px 50px white;
+  border-radius: 43%;
+  /*Pour lier l'animation*/
+  animation: flotter 3s infinite;
+}
+
+div.choix::after {
+  z-index: -1;
+  content: "";
+  top: 15vw;
+  left: -5vh;
+  position: absolute;
+  height: auto;
+  border-right: 21vh solid #ffffff;
+  border-left: 0px solid transparent;
+  border-top: 6.5vh solid transparent;
+  animation: float2 3s infinite;
+}
+
+/*Pour les animations de bonnes ou mauvaises réponses*/
+div.choix.bonne-reponse-anim {
+  animation: bonne-reponse-anim 2s alternate;
+}
+div.choix.mauvaise-reponse-anim {
+  animation: mauvaise-reponse-anim 1s alternate;
+}
+main.finDuQuiz {
+  font-size: 5rem;
+  /*Conteneur flex en colonne*/
+  flex-direction: column;
+  /*Non affiché au démarrage*/
+  display: none;
+  width: 0vw;
+  background-color: #444444;
+}
+.btnRecommencer {
+  width: 30vw;
+  height: 20vh;
+  background-color: white;
+}
+.animer-resultat {
+  animation: animer-resultat 2s alternate;
+}
+
+main.finDuQuiz.animer-resultat {
+  transition: width 0s ease 0s;
+  width: 50vw;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  background-color: #ffffff;
+  color: #c6c7ca;
+}
+/************************************************************
+ ********************* MEDIA-QUERIES ************************
+ ************************************************************/
+@media screen and (min-width: 610px) {
+  .main-quiz {
+    background-image: url(../images/Conversation4.png);
+  }
+
+  section .titre-question {
+    font-size: 2rem;
+    background-color: #542201;
+    color: #f1e5d9;
+  }
+  section .les-choix-de-reponse {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div .choix {
+    font-size: clamp(2.5rem, -1.5rem + 8vw, 4rem);
+    background-color: #542201;
+    width: 43%;
+    height: 41%;
+    color: #f1e5d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 26px 5px 50px #542201;
+  }
+  div .choix::after {
+    border-right: 21vh solid #542201;
+    border-left: 0px solid transparent;
+    border-top: 8vh solid transparent;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main-quiz {
+    background-image: url(../images/Together-Hands.png);
+  }
+
+  section .titre-question {
+    font-size: 2rem;
+    background-color: #82a1bb;
+    color: #42799f;
+  }
+
+  div .choix {
+    font-size: clamp(2.5rem, -1.5rem + 8vw, 4rem);
+    background-color: #82a1bb;
+    width: 43%;
+    color: #42799f;
+    box-shadow: 26px 5px 50px #82a1bb;
+  }
+
+  div .choix::after {
+    top: 10vw;
+    left: -5vh;
+    border-right: 21vh solid #82a1bb;
+    border-left: 0px solid transparent;
+    border-top: 8vh solid transparent;
+  }
+}

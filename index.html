@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+  <head>
+    <title>Célébrons la diversité culturelle!</title>
+    <meta charset="UTF-8" />
+    <!-- Ajustement de la taille du viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Polices de caractères utilisées-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sniglet:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Liens CSS-->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styleQuiz.css" />
+  </head>
+
+  <body>
+    <!-- Curseur personnalisé -->
+    <div class="curseur"></div>
+    <header class="intro">
+      <div class="bulle-intro-anim"><h1>Connais-tu tes langues?</h1></div>
+    </header>
+
+    <main class="main-quiz">
+      <div class="barre-avancement"></div>
+
+      <section>
+        <div class="titre-question"></div>
+        <div class="les-choix-de-reponse"></div>
+      </section>
+    </main>
+
+    <main class="finDuQuiz">
+      <!--<img src="images/giphy.gif" alt="DuolingoGIF" srcset="" />-->
+      <p>Meilleur score : <span id="meilleur-score"></span></p>
+    </main>
+    <!-- Chargement des scripts -->
+    <script src="js/questions.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

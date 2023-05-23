@@ -1,0 +1,63 @@
+/*---------------------------------------------*/
+/* Normalisation supplémentaire 
+============================================================================= */
+
+/* Notez l'utilisation des sélecteurs additionnels pour les pseudo-éléments */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Mise en page
+============================================================*/
+html {
+  background-image: url("../images/Langues-affiches.png");
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  font-family: "Sniglet", cursive;
+  /* Ajustement de la taille des polices à la racine du document */
+  font-size: clamp(14px, 0.5rem + 0.5vw, 24px);
+  /*Changer le curseur*/
+  cursor: url(../images/curseurPerso.png) 32 32, pointer;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  color: whitesmoke;
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  /*Conteneur flex en rangée pour l'intro...*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
